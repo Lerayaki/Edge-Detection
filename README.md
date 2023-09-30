@@ -44,7 +44,7 @@ A lot of detail was lost around the zebra's face, and the zebra's line edges hav
 Let's see an overlay.\
 ![DoubleOverlay](images/generated/Mean-zebra/doubleOverlay.jpg)
 \
-And... it doesn't in fact look too good.\
+And... it does in fact look not good at all.\
 Let's see how much of the fisrt-attempt edges has been lost due to the second blurr.\
 ![EdgeLoss](images/generated/Mean-zebra/doubleLoss.jpg)\
 A great deal of grass edges were loss (or rather, displaced) but so were the zebra's edges.\
