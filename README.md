@@ -15,7 +15,7 @@ Blurr it, setting each pixel equal to the mean of those pixels around it\
 Compute the difference between each original pixel and its blurred self\
 ![Difference](images/generated/Mean-zebra/diff.jpg)\
 \
-Let's apply a linear scale so that we use the entire 8bit range of each pixel.\
+Let's apply a linear scale filter so that we use the entire 8bit range of each pixel.\
 Thus, enhancing the gap between those pixels which where most different from those which were just a little.\
 ![LinearScale](images/generated/Mean-zebra/scaled.jpg)\
 \
@@ -56,4 +56,5 @@ Let's compare it to OpenCV's Canny edge detection.\
 \
 Now that is much nicer!\
 \
-But I still wonder if a Gaussian mean or different paramenters could make for a better Blurr Edge Detection algorithm...
+But I still wonder if a Gaussian mean or different paramenters could make for a better Blurr Edge Detection algorithm...\
+This was a funny idea that came to mind, and turned out to be a nice and fun little project :)
