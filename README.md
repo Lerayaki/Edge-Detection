@@ -35,6 +35,10 @@ Looks like the grass under the zebra's shadow provides much stronger edges which
 \
 This doesn't look too bad, but can we do anything to reduce the grass noise further without hurting those edges of the zebra which we'd like to keep?\
 Most of the "edges" produced by the grass are isolated pixels... but the zebra's edges are continous, or less isolated.\
-What if we apply a second blurr, in an attempt to reduce those isolated "edges"?\
+What if we apply a second blurr, in an attempt to reduce those isolated "edges", and then apply another threshold to get rid of the weakest ones?\
 ![DoubleBlurr](images/generated/Mean-zebra/doubleBlurr.jpg)\
 \
+It doesn't look too promising.\
+A lot of detail was lost around the zebra's face, and the zebra's line edges have doubled.\
+Let's see an overlay.\
+![DoubleOverlay](images/generated/Mean-zebra/doubleOverlay.jpg)
