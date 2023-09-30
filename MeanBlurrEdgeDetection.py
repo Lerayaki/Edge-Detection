@@ -11,17 +11,21 @@ def EdgeFilter(image, threshold=0.1):
 
 def EdgeOverlay(image, edges, color=(0, 0, 255)):
     output = np.array(image, copy=True)
-    output[np.mean(edges, axis=2) > 0] = color
+    if len(edges.shape) > 2:
+        output[np.mean(edges, axis=2) > 0] = color
+    else:
+        output[edges > 0] = color
     return output
 
 
 def LabelImage(image, label, color=(255, 255, 255)):
+    output = np.array(image, copy=True)
     position = (10, 25)
     font = cv2.FONT_HERSHEY_SIMPLEX
     fontScale = 0.6
     thickness = 1
     return cv2.putText(
-        image, label, position, font, fontScale, color, thickness, cv2.LINE_AA
+        output, label, position, font, fontScale, color, thickness, cv2.LINE_AA
     )
 
 
@@ -125,3 +129,25 @@ cv2.imwrite("images/generated/Mean-zebra/overlayLow.jpg", overlayLow)
 cv2.imwrite("images/generated/Mean-zebra/doubleBlurr.jpg", doubleBlurr)
 cv2.imwrite("images/generated/Mean-zebra/doubleOverlay.jpg", doubleOverlay)
 cv2.imwrite("images/generated/Mean-zebra/doubleLoss.jpg", loss)
+
+
+canny = cv2.Canny(image, 220, 250)
+canny = np.dstack([canny, canny, canny])
+
+row1 = np.concatenate(
+    (LabelImage(edgesHigh, "Blurr Edges"), LabelImage(canny, "Canny Edges")), axis=1
+)
+row2 = np.concatenate(
+    (
+        LabelImage(EdgeOverlay(image, edgesHigh), "Blurr Overlay"),
+        LabelImage(EdgeOverlay(image, canny), "Canny Overlay"),
+    ),
+    axis=1,
+)
+
+meanVScanny = np.concatenate((row1, row2))
+cv2.imshow("Mean Blurr vs Canny Edge Detection", meanVScanny)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+cv2.imwrite("images/generated/Mean-zebra/VScanny.jpg", meanVScanny)

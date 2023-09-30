@@ -1,7 +1,6 @@
 import cv2
 
-
-fileName = "zebra-s.jpg"
+fileName = "zebra.jpg"
 
 image = cv2.imread("images/" + fileName, cv2.IMREAD_GRAYSCALE)
 edges = cv2.Canny(image, 220, 250)

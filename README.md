@@ -16,7 +16,7 @@ Compute the difference between each original pixel and its blurred self\
 ![Difference](images/generated/Mean-zebra/diff.jpg)\
 \
 Let's apply a linear scale so that we use the entire 8bit range of each pixel.\
-Thus, enhancing the gap between those pixels which where most different from those which were just a little\
+Thus, enhancing the gap between those pixels which where most different from those which were just a little.\
 ![LinearScale](images/generated/Mean-zebra/scaled.jpg)\
 \
 It looks like the edges on the zebra's contour and lines can be detected well enough, but what about the grass?\
@@ -45,4 +45,13 @@ Let's see an overlay.\
 ![DoubleOverlay](images/generated/Mean-zebra/doubleOverlay.jpg)
 \
 And... it doesn't in fact look too good.\
-![EdgeLoss](images/generated/Mean-zebra/doubleLoss.jpg)
+Let's see how much of the fisrt-attempt edges has been lost due to the second blurr.\
+![EdgeLoss](images/generated/Mean-zebra/doubleLoss.jpg)\
+A great deal of grass edges were loss (or rather, displaced) but so were the zebra's edges.\
+So... this won't do.\
+But the first approach was better than I expected. Not too bad.\
+\
+Let's compare it to OpenCV's Canny edge detection.\
+![Canny](images/generated/Mean-zebra/VScanny.jpg)
+\
+\
