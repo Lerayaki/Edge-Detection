@@ -22,7 +22,6 @@ Thus, enhancing the gap between those pixels which where most different from tho
 It looks like the edges on the zebra's contour and lines can be detected well enough, but what about the grass?\
 It surely is producing a lot of noise, although these unwanted edges seem to be less intense.\
 Let's then apply a filter, so that we only keep those edges whose intensity exceeds a certain thershold.\
-![FilteredEdges](images/generated/Mean-zebra/edgesLow.jpg)\
 ![FilteredEdges](images/generated/Mean-zebra/edges.jpg)\
 \
 It's seems we've reduced quite a lot of noise from the grass.\
@@ -30,7 +29,8 @@ But some weaker edges around the zebra have also disappeared.\
 Fine tunning this threshold can reduce the grass edges quite a bit without damaging those of the zebra too much.\
 But it seems we'll have to deal with some loss on our protagonist either way.\
 Let's see those edges over the original image.\
-![Overlay](images/generated/Mean-zebra/overlay.jpg)\
+![OverlayLow](images/generated/Mean-zebra/overlayLow.jpg)\
+![OverlayHigh](images/generated/Mean-zebra/overlay.jpg)\
 \
 Looks like the grass under the zebra's shadow provides much stronger edges which won't easily go away using this method.\
 \
@@ -43,3 +43,6 @@ It doesn't look too promising.\
 A lot of detail was lost around the zebra's face, and the zebra's line edges have doubled.\
 Let's see an overlay.\
 ![DoubleOverlay](images/generated/Mean-zebra/doubleOverlay.jpg)
+\
+And... it doesn't in fact look too good.\
+![EdgeLoss](images/generated/Mean-zebra/doubleLoss.jpg)
