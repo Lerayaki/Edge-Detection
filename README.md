@@ -40,12 +40,12 @@ What if we apply a second blurr, in an attempt to reduce those isolated "edges",
 ![DoubleBlurr](images/generated/Mean-zebra/doubleBlurr.jpg)\
 \
 It doesn't look too promising.\
-A lot of detail was lost around the zebra's face, and the zebra's line edges have doubled.\
+A lot of detail was lost around the zebra's face, and the zebra's lines edges have doubled.\
 Let's see an overlay.\
 ![DoubleOverlay](images/generated/Mean-zebra/doubleOverlay.jpg)
 \
 And... it does in fact look not good at all.\
-Let's see how much of the fisrt-attempt edges has been lost due to the second blurr.\
+Let's see how much of the fisrt-attempt edges have been lost due to the second blurr.\
 ![EdgeLoss](images/generated/Mean-zebra/doubleLoss.jpg)\
 A great deal of grass edges were loss (or rather, displaced) but so were the zebra's edges.\
 So... this won't do.\
