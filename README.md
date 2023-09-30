@@ -58,3 +58,11 @@ Now that is much nicer!\
 \
 But I still wonder if a Gaussian mean or different paramenters could make for a better Blurr Edge Detection algorithm...\
 This was a funny idea that came to mind, and turned out to be a nice and fun little project :)
+\
+\
+\
+This are the results on a few other images:
+![office](images/generated/Mean-office.jpg)\
+![shibuya](images/generated/Mean-shibuya.jpg)\
+![tokyo](images/generated/Mean-tokyo.jpg)\
+![people](images/generated/Mean-people.jpg)\
