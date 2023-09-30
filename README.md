@@ -22,6 +22,7 @@ Thus, enhancing the gap between those pixels which where most different from tho
 It looks like the edges on the zebra's contour and lines can be detected well enough, but what about the grass?\
 It surely is producing a lot of noise, although these unwanted edges seem to be less intense.\
 Let's then apply a filter, so that we only keep those edges whose intensity exceeds a certain thershold.\
+![FilteredEdges](images/generated/Mean-zebra/edgesLow.jpg)\
 ![FilteredEdges](images/generated/Mean-zebra/edges.jpg)\
 \
 It's seems we've reduced quite a lot of noise from the grass.\
