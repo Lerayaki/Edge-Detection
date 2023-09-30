@@ -54,4 +54,6 @@ But the first approach was better than I expected. Not too bad.\
 Let's compare it to OpenCV's Canny edge detection.\
 ![Canny](images/generated/Mean-zebra/VScanny.jpg)
 \
+Now that is much nicer!\
 \
+But I still wonder if a Gaussian mean or different paramenters could make for a better Blurr Edge Detection algorithm...
