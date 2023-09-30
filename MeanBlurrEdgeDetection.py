@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 
 def EdgeFilter(image, threshold=0.1):
@@ -108,4 +109,15 @@ cv2.waitKey(0)
 
 cv2.destroyAllWindows()
 
-cv2.imwrite("images/generated/Mean-" + fileName, stack)
+cv2.imwrite("images/generated/Mean-" + fileName + "/", stack)
+
+if not os.path.exists("images/generated/Mean-" + fileName):
+    os.makedirs("images/generated/Mean-" + fileName)
+cv2.imwrite("images/generated/Mean-zebra/blurred.jpg", mean)
+cv2.imwrite("images/generated/Mean-zebra/diff.jpg", diff)
+cv2.imwrite("images/generated/Mean-zebra/scaled.jpg", scaled)
+cv2.imwrite("images/generated/Mean-zebra/edges.jpg", edgesHigh)
+cv2.imwrite("images/generated/Mean-zebra/overlay.jpg", overlayHigh)
+cv2.imwrite("images/generated/Mean-zebra/doubleBlurr.jpg", doubleBlurr)
+cv2.imwrite("images/generated/Mean-zebra/doubleOverlay.jpg", doubleOverlay)
+cv2.imwrite("images/generated/Mean-zebra/doubleLoss.jpg", loss)
