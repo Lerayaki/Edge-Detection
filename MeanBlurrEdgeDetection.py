@@ -70,8 +70,10 @@ overlayLow = EdgeOverlay(image, edgesLow, color=(0, 0, 255))
 edgesHigh = EdgeFilter(scaled, 0.23)
 overlayHigh = EdgeOverlay(image, edgesHigh, color=(0, 255, 0))
 
-doubleBlurr = EdgeFilter(LinearScaling(Difference(MeanBlur(scaled, 3), scaled)), 0.2)
-doubleOverlay = EdgeOverlay(image, doubleBlurr)
+doubleBlurr = EdgeFilter(
+    LinearScaling(Difference(MeanBlur(edgesHigh, 3), edgesHigh)), 0.63
+)
+doubleOverlay = EdgeOverlay(image, doubleBlurr, color=(0, 255, 0))
 
 loss = edgesLow - doubleBlurr
 
@@ -119,6 +121,7 @@ cv2.imwrite("images/generated/Mean-zebra/scaled.jpg", scaled)
 cv2.imwrite("images/generated/Mean-zebra/edges.jpg", edgesHigh)
 cv2.imwrite("images/generated/Mean-zebra/edgesLow.jpg", edgesLow)
 cv2.imwrite("images/generated/Mean-zebra/overlay.jpg", overlayHigh)
+cv2.imwrite("images/generated/Mean-zebra/overlayLow.jpg", overlayLow)
 cv2.imwrite("images/generated/Mean-zebra/doubleBlurr.jpg", doubleBlurr)
 cv2.imwrite("images/generated/Mean-zebra/doubleOverlay.jpg", doubleOverlay)
 cv2.imwrite("images/generated/Mean-zebra/doubleLoss.jpg", loss)
